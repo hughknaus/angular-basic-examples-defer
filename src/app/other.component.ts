@@ -21,7 +21,7 @@ export class OtherComponent implements OnInit, OnDestroy {
 
     let myObs$ = this.actions$.pipe(
       ofType(otherActions.doSomething),
-      tap((x) => console.log(`tap me`, x)),
+      tap((x) => console.log(`dispatch caught:`, x)),
       takeUntil(this.destroyed$)
     );
 
